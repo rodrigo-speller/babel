@@ -170,6 +170,22 @@ describe("api", function () {
     expect(babel.types).toBeDefined();
   });
 
+  it("exposes parser", function () {
+    expect(Object.keys(babel.parser)).toMatchInlineSnapshot(`
+      Array [
+        "parse",
+        "parseExpression",
+        "tokTypes",
+      ]
+    `);
+  });
+
+  it("exposes generate", function () {
+    expect(babel.generate(parseSync("foo")).code).toMatchInlineSnapshot(
+      `"foo;"`,
+    );
+  });
+
   it("exposes the parser's token types", function () {
     expect(babel.tokTypes).toBeDefined();
   });
