@@ -267,7 +267,16 @@ module.exports = function (api) {
         plugins: [
           [
             pluginInjectNodeReexportsHints,
-            { names: ["types", "tokTypes", "traverse", "template"] },
+            {
+              names: [
+                "types",
+                "tokTypes",
+                "traverse",
+                "template",
+                "parser",
+                "generate",
+              ],
+            },
           ],
         ],
       },
